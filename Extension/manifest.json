@@ -1,0 +1,30 @@
+{
+    "name" : "HelpMeOut",
+    "description" : "This extension helps you record and share videos with ease",
+    "version" : "1.0.0",
+    "manifest_version" : 3,
+     "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+   "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+
+   "host_permissions":[
+    "http://*/",
+    "https://*/*"
+   ],
+
+   "permissions":[
+   "scripting",
+   "tabs",
+   "activeTab"
+   ],
+ 
+    "action": {
+        "default_popup" : "index.html"
+    }
+    
+}
