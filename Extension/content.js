@@ -55,7 +55,7 @@ function onRecordingStart(stream) {
 
 
         URL.revokeObjectURL(url);
-        window.location.href = "https://6519568c58a2273d69a4722b--helpmeout-hng.netlify.app/"
+        window.location.href = "https://helpmeout-hng.netlify.app/"
     }
 }
 
