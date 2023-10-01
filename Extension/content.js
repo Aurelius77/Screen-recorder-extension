@@ -18,6 +18,7 @@ function onRecordingStart(stream) {
         let recordedBlob = event.data;
         let url = URL.createObjectURL(recordedBlob);
 
+
         let a = document.createElement("a");
 
         a.style.display = "none";
@@ -27,10 +28,33 @@ function onRecordingStart(stream) {
         document.body.appendChild(a);
         a.click();
 
+        const formdata = new FormData()
+        formdata.append('file', recordedBlob, 'screen-recording.webm')
+        const apiUrl = 'https://chrome-extension-iq7f.onrender.com/upload'
+
+        console.log(formdata)
+        fetch(apiUrl, {
+            method: 'POST',
+            body: formdata,
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('File upload failed');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('File uploaded successfully:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+
         document.body.removeChild(a);
 
+
         URL.revokeObjectURL(url);
-        window.location.href = "https://www.google.com"
     }
 }
 
