@@ -1,0 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAVYtvTW58XDadvUPQ1Xt0g7G2JjInOgqs",
+  authDomain: "screen-recorder-f30e8.firebaseapp.com",
+  projectId: "screen-recorder-f30e8",
+  storageBucket: "screen-recorder-f30e8.appspot.com",
+  messagingSenderId: "870185478367",
+  appId: "1:870185478367:web:0a18d3836b7e0d4e8aa16a",
+  measurementId: "G-JXVNGY5VB5"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
